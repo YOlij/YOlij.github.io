@@ -6,7 +6,7 @@ description: "Discover KISS here."
 permalink: /
 ---
 
-# The KISS prototype.
+# The KISS prototype
 {: .fs-9 }
 
 In the KISS project, a modular framework is developed for simulation environmental flow problems.
@@ -21,23 +21,23 @@ The first prototype applications on this framework will, therefore, involve two-
 
 ## Manuals
 
-The different Manuals can be found [here](docs/manuals.md).
+The different Manuals can be found [here](kiss/docs/manuals/manuals.md).
 
 ## Tutorials
 
-The different tutorials can be found [here](docs/tutorials.md).
+The different tutorials can be found [here](kiss/docs/tutorials/tutorials.md).
 
 ## Installation instructions
 
-The instructions for installation can be found [here](docs/installation.md).
+The instructions for installation can be found [here](kiss/docs/installation/installation.md).
 
 ## Build instructions
 
-The instructions for building can be found [here](docs/building.md).
+The instructions for building can be found [here](kiss/docs/building/building.md).
 
 ## Code documentation
 
-The code documentation can be found [here](docs/code.md).
+The code documentation can be found [here](kiss/docs/code/code.md).
 
 ## Architecture documentation
 
@@ -45,17 +45,17 @@ The code documentation can be found [here](kiss/docs/architecture/architecture.m
 
 ## Mathematical & numerical documentation
 
-The mathematical and numerical documentation of the implemented methods can be found [here](docs/numerics.md).
+The mathematical and numerical documentation of the implemented methods can be found [here](kiss/docs/numerics/numerics.md).
 
 ## Testing, verification and validation
 
-An overview of the different (types of) tests can be found [here](docs/tests.md).
+An overview of the different (types of) tests can be found [here](kiss/docs/test/tests.md).
 
 ## Converting existing input data
 
 For a number of other simulation packages, existing model input can be converted for use on this framework.  
-Details can be found [here](docs/input_conversion.md).
+Details can be found [here](kiss/docs/input_conversion/input_conversion.md).
 
 ## Way of working
 
-A description of the current way of working can be found [here](docs/way_of_working.md).
+A description of the current way of working can be found [here](kiss/docs/way_of_working/way_of_working.md).
