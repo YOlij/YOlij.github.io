@@ -28,7 +28,7 @@ The code documentation can be found [here](docs/code.md).
 
 ## Architecture documentation
 
-The code documentation can be found [here](docs/architecture.md).
+The code documentation can be found [here](https://yolij.github.io/docs/architecture.md).
 
 ## Mathematical & numerical documentation
 
