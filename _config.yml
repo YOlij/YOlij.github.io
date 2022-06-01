@@ -1,9 +1,6 @@
-title: The KISS Project
+title: KISS
 description: Documentation for the KISS Project
 # url: "https://yolij.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-
-# Set a path/url to a logo that will be displayed instead of the title
-site-logo: "/kiss/images/kissprojectavatar.png"
 
 remote_theme: just-the-docs/just-the-docs
 
