@@ -2,6 +2,7 @@
 layout: default
 title: Building On Linux
 parent: Building
+grand_parent: Getting Started
 nav_order: 1
 ---
 
