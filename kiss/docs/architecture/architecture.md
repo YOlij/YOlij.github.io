@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Architecture
-nav_order: 3
+title: UI Components
+nav_order: 2
+has_children: true
 ---
 
 # Architecture
