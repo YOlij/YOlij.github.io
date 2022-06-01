@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Architecture baby
-nav_order: 2
+title: Architecture
+nav_order: 3
 has_children: true
 ---
 
