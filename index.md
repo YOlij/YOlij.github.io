@@ -41,7 +41,7 @@ The code documentation can be found [here](docs/code.md).
 
 ## Architecture documentation
 
-The code documentation can be found [here](docs/architecture.md).
+The code documentation can be found [here](kiss/docs/architecture/architecture.md).
 
 ## Mathematical & numerical documentation
 
