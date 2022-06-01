@@ -1,6 +1,6 @@
 title: The KISS Project
 description: Documentation for the KISS Project
-baseurl: "/kiss" # the subpath of your site, e.g. /blog
+baseurl: "/YOlij" # the subpath of your site, e.g. /blog
 url: "https://yolij.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 remote_theme: just-the-docs/just-the-docs
