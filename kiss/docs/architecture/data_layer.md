@@ -2,7 +2,7 @@
 layout: default
 title: Data Layer
 parent: Architecture
-nav_order: 1
+nav_order: 2
 ---
 
 # Data Layer
