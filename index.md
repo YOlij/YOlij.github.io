@@ -6,7 +6,7 @@ description: "Discover KISS here."
 permalink: /
 ---
 
-# The KISS prototype
+# The KISS prototype <img src="kissprojectavatar.png" alt="Component View">
 {: .fs-9 }
 
 In the KISS project, a modular framework is developed for simulation environmental flow problems.
