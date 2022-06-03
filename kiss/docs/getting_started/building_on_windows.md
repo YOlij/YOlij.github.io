@@ -83,8 +83,8 @@ Download from the Subversion server:
   - https://repos.deltares.nl/repos/ds/trunk/additional/tools_to_msi/wix/netcdf/netcdf-c-4.8.1.msi
 
 Alternatively: download from the DFS server:
-  - \\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\hdf5\hdf5-1.10.8\hdf5-1.10.8.msi
-  - \\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\netcdf\netcdf_4.8.1\netcdf-c-4.8.1.msi
+  - \\\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\hdf5\hdf5-1.10.8\hdf5-1.10.8.msi
+  - \\\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\netcdf\netcdf_4.8.1\netcdf-c-4.8.1.msi
 
 Execute the msi's after downloading.
 
