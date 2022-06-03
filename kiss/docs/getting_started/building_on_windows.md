@@ -17,26 +17,30 @@ nav_order: 2
  - [Doxygen (optional, for building code documentation)](#doxygen)
  - [LaTeX (optional, for building the technical documentation)](#latex)
 
+
+
 ---
 ## CMake
-
+ 
 ### Installing CMake on Windows
 
 Execute the following steps:
  1. Download CMake from https://github.com/Kitware/CMake/releases/download/ (minimal version 3.19)
  2. Follow the installation instructions, among others make sure to select the option below during installation:
-
+ 
  ![](images/cmake_installation.png)
-
+ 
  3. Install CMake for instance in `c:\Program Files\CMake\`
  4. Check whether the CMake-binary location has been added to the your system PATH:
     - Click the windows start button
     - Type `environment variables` to edit the System environment variables
     - Go to the settings field for Environment Variables
     - In the group System Variables: check that the PATH variable contains an entry containing your installation path:
-
+      
       For the example above this should be:
        `c:\Program Files\CMake\bin`
+
+
 
 ---
 ## Git
@@ -44,6 +48,8 @@ Execute the following steps:
 ### Installing Git under Windows
 
 Download and install Git from https://git-scm.com/download/win
+
+
 
 ---
 ## Boost
@@ -59,10 +65,30 @@ Follow these steps:
     - `BOOST_LIBRARYDIR=c:\boost\boost_1_78_0\lib64-msvc-14.2`
  4. Add to environment `PATH: c:\boost\boost_1_78_0\lib64-msvc-14.2` or `PATH: c:\local\boost_1_78_0\lib64-msvc-14.2`
 
+
+
 ---
 ## NetCDF-cxx
 
-### Installing NetCDF-cxx on Windows
+Either use precompiled binaries, available in msi's (only available inside Deltares), or download the source code and compile it yourself.
+
+### Using msi's
+
+Two msi's are needed:
+  - hdf5-1.10.8.msi
+  - netcdf-c-4.8.1.msi
+
+Download from the Subversion server:
+  - https://repos.deltares.nl/repos/ds/trunk/additional/tools_to_msi/wix/hdf5/hdf5-1.10.8.msi
+  - https://repos.deltares.nl/repos/ds/trunk/additional/tools_to_msi/wix/netcdf/netcdf-c-4.8.1.msi
+
+Alternatively: download from the DFS server:
+  - \\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\hdf5\hdf5-1.10.8\hdf5-1.10.8.msi
+  - \\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\netcdf\netcdf_4.8.1\netcdf-c-4.8.1.msi
+
+Execute the msi's after downloading.
+
+### Compiling code
 
 On Windows, NetCDF-c and its dependencies must be built from source code. A Windows installer for NetCDF-c is available but the NetCDF-c installation that it provides does not satisfy all of the buildtime dependencies of NetCDF-cxx.
 
@@ -73,7 +99,7 @@ The installation takes a bit more time than on Ubuntu but is again straighforwar
 	- https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.8/src/hdf5-1.10.8.zip
 	- https://curl.se/download/curl-7.81.0.zip
 	- https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.8.1.zip
-
+	
 2. Build zlib-1.2.11:
 	- `mkdir zlib-1.2.11-build && cd zlib-1.2.11-build`
 	- `cmake ..\zlib-1.2.11 -G "Visual Studio 16 2019"`
@@ -103,11 +129,11 @@ The installation takes a bit more time than on Ubuntu but is again straighforwar
 	- `cd ..`
 
 	After installing NetCDF-c, find line 58 of `C:\Program Files (x86)\netCDF\lib\cmake\netCDF\netCDFTargets.cmake` and comment it out by placing a '#' character in front of it:
-
+	
 	`# INTERFACE_LINK_LIBRARIES "hdf5-shared;hdf5_hl-shared;C:/Program Files (x86)/zlib/lib/zlib.lib;C:\\Program Files (x86)\\CURL\\lib\\libcurl_imp.lib"`
-
+	
 	Neglecting to do this will cause build errors related to references to `hdf5-shared` and `hdf5_hl-shared` libraries (which do not exist) when building NetCDF-cxx.
-
+	
 6. Build NetCDF-cxx:
 	- `git clone https://github.com/joostbonnet/netcdf-cxx4.git`
 	- `cd netcdf-cxx4`
@@ -126,15 +152,29 @@ The installation takes a bit more time than on Ubuntu but is again straighforwar
 	After installing NetCDF-cxx, find line 58 of `C:\Program Files (x86)\NCXX\lib\cmake\netCDF\netcdf-cxx4Targets.cmake` and remove the text `;hdf5-shared`.
 
 	Neglecting to do this will cause build errors related to references to an `hdf5-shared` library (which does not exist) when building software (using CMake) that depends on NetCDF-cxx.
-
+	
 7. Before running a project build, tell CMake where to find NetCDF-cxx and extend the Windows PATH:
 	- `set netCDFCxx_DIR=C:\Program Files (x86)\NCXX\lib\cmake\netCDF`
 	- `set PATH=%PATH%;C:\Program Files (x86)\NCXX\bin;C:\Program Files (x86)\netCDF\bin;C:\Program Files\HDF_Group\HDF5\1.10.8\bin;C:\Program Files (x86)\CURL\bin;c:\Program Files (x86)\zlib\bin`
 
+
+
 ---
 ## MeshKernel
 
-### Installing MeshKernel on Windows
+Either use precompiled binaries, available in an msi (only available inside Deltares), or download the source code and compile it yourself.
+
+### Using msi
+
+Download from the Subversion server:  
+https://repos.deltares.nl/repos/ds/trunk/additional/tools_to_msi/wix/meshkernel/meshkernel.msi
+
+Alternatively: download from the DFS server:  
+\\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\meshkernel\meshkernel.msi
+
+Execute the msi after downloading.
+
+### Compiling code
 
 1. Clone, build and install MeshKernel:
 	- `git clone https://github.com/Deltares/MeshKernel.git`
@@ -144,19 +184,33 @@ The installation takes a bit more time than on Ubuntu but is again straighforwar
 	- `cmake .. -G "Visual Studio 16 2019"`
 	- `cmake --build . -j4 --config Release`
 	- `cmake --build . --config Release --target install`
-
+	
 2. Before running a project build, tell CMake where to find MeshKernel and extend the Windows PATH:
 	- `set MESHKERNEL_DIR=C:\Program Files (x86)\MeshKernel`
 	- `set PATH=%PATH%;C:\Program Files (x86)\MeshKernel\bin`
 
+
+
 ---
 ## PETSc
 
-### Installing PETSc on Windows
+Either use precompiled binaries, available in an msi (only available inside Deltares), or download the source code and compile it yourself.
+
+### Using msi
+
+Download from the Subversion server:  
+https://repos.deltares.nl/repos/ds/trunk/additional/tools_to_msi/wix/petsc/petsc-3.16.5_ifort-2021.2.msi
+
+Alternatively: download from the DFS server:  
+\\dfs-trusted.directory.intra\dfs\Teamcity\WindowsSoftware\petsc\petsc-3.16.5\petsc-3.16.5_ifort-2021.2.msi
+
+Execute the msi's after downloading.
+
+### Compiling code
 
 1. Download and install Intel oneAPI MPI and MKL:
     - Download online or offline installers for MPI, MKL and optionally the Intel Fortran Compiler from the [standalone components](https://www.intel.com/content/www/us/en/developer/articles/tool/oneapi-standalone-components.html) page.
-    - Run the installers. Installation takes some time.
+    - Run the installers. Installation takes some time.	
 
 2. Install Cygwin:
 
@@ -212,6 +266,8 @@ $ cygpath -u `cygpath -ms '/cygdrive/c/Program Files (x86)/Intel/oneAPI/mpi/late
 9. Install:
     - `make PETSC_DIR=/cygdrive/c/Development/petsc-3.16.5 PETSC_ARCH=arch-mswin-c-opt install`
 
+
+
 ---
 ## Doxygen
 
@@ -222,6 +278,8 @@ At present it is `doxygen-1.9.3-setup.exe`
 
 Follow the installation instructions.
 CMake should be able to find Doxygen by itself.
+
+
 
 ---
 ## LaTeX
@@ -235,5 +293,6 @@ Start the MiKTeX Console.
  - On the `Settings|Directories` path, add `C:\ProgramData\MiKTex` to the TEXMF root directories.
 
 Download ImageMagick from https://imagemagick.org .
-Current version: https://download.imagemagick.org/ImageMagick/download/binaries/ImageMagick-7.1.0-19-Q16-HDRI-x64-dll.exe
+Current version: https://download.imagemagick.org/ImageMagick/download/binaries/ImageMagick-7.1.0-19-Q16-HDRI-x64-dll.exe 
 And run the installer. Be sure to select `install legacy utilities (e.g. 'convert')`, otherwise CMake will complain that it cannot find ImageMagick
+
